@@ -47,5 +47,5 @@ Bac2Feature: an easy-to-use interface for predicting prokaryotic traits from 16S
 Masaki Fujiyoshi, Takao K Suzuki, Wataru Iwasaki, Chikara Furuwasa, Motomu Matsui
 bioRxiv
 ## Contact
-- Masaki Fujiyoshi (Graduate School of Frontier Sciences, The University of Tokyo): fujiyoshi-masaki353@g.ecc.u-tokyo.ac.jp
-- [Matsui Motomu](https://sites.google.com/site/motomumatsui/) (Institute for Chemical Research, Kyoto University): motomu.matsui@gmail.com
+- Masaki Fujiyoshi (The University of Tokyo): fujiyoshi-masaki353@g.ecc.u-tokyo.ac.jp
+- [Matsui Motomu](https://sites.google.com/site/motomumatsui/) (Kyoto University): motomu.matsui@gmail.com
