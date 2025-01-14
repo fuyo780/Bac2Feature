@@ -31,14 +31,15 @@ conda config --append channels conda-forge
 conda config --append channels bioconda
 
 # Create conda environment
-conda create --name bac2feature --file environment/bac2feature_packages.yml
+conda create --name bac2feature --file environment/env_bac2feature.yml
 conda activate bac2feature
 
 # (Optional) Create conda environment for taxonomy-based prediction
 conda create --name qiime2-2023.5 --file environment/env_qiime2-2023.5-py38-linux-conda.yml
 
 # Install Bac2Feature command line
-pip install .
+cd Bac2Feature/
+pip install bac2feature
 
 # Print help message
 bac2feature -h
