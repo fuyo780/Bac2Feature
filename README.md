@@ -25,6 +25,7 @@ Bac2Feature depends on conda environments, so please install [conda](https://doc
 ```sh
 # Clone github repository
 git clone https://fuyo780/Bac2Feature.git
+cd Bac2Feature/
 
 # Add conda repositories, if necessary
 conda config --append channels conda-forge
@@ -38,7 +39,6 @@ conda activate bac2feature
 conda create --name qiime2-2023.5 --file environment/env_qiime2-2023.5-py38-linux-conda.yml
 
 # Install Bac2Feature command line
-cd Bac2Feature/
 pip install bac2feature
 
 # Print help message
