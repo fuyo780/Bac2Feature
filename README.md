@@ -1,7 +1,7 @@
 # Bac2Feature
 Bac2Feature is an interface for predicting bacterial and archaeal traits from 16S rRNA gene sequences.
 
-Bac2Feature integrates three representative methods for trait prediction and provided them with systematic evaluations for avoiding spurious predictions. See details for Citations.
+Bac2Feature integrates three representative methods for trait prediction and provided them with systematic evaluations for avoiding spurious predictions. See Citations for details.
 ## Predicted traits by Bac2Feature
 Currently, Bac2Feature predicts 8 continuous and 10 categorical traits listed below.
 - Continuous traits
