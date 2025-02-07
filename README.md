@@ -21,9 +21,7 @@ Currently, Bac2Feature predicts 8 continuous and 10 categorical traits listed be
 	- Cell shape
 		- Bacillus, Coccus, Filament, Spiral
 ## Download stand-alone version
-Install dependency:
-- Linux
-- [Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html)
+Bac2Feature is currently supported on Linux-based operating systems and has been verified on Ubuntu 24.04.01 LTS and Red Hat Enterprise Linux 8.7.
 ```sh
 # Clone github repository
 git clone https://fuyo780/Bac2Feature.git
