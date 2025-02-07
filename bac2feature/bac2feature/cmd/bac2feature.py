@@ -38,14 +38,21 @@ bac2feature -s rep_seqs.fasta -o predicted_traits.tsv
                             '"taxonomy": predict prokaryotic traits using taxonomic classification. '
                             '"phylogeny": predict prokaryotic traits using phylogenetic placement.'
                         )
-    # Reference for phylogenetic placement
-    parser.add_argument('--ref_dir_placement', metavar='PATH', required=False, default=default.ref_dir_placement,
-                        help='Ref for phylogenetic placement.')
+
     # Reference for homology search
     parser.add_argument('--ref_blastdb', metavar='PATH', required=False, default=default.ref_blastdb,
                         help='Ref for homology search.')
+    # Reference for taxonomy classification
+    parser.add_argument('--ref_nb_classifier', metavar='PATH', required=False, default=default.ref_nb_classifier,
+                        help='Ref for taxonomy classification.')
+    # Reference for phylogenetic placement
+    parser.add_argument('--ref_dir_placement', metavar='PATH', required=False, default=default.ref_dir_placement,
+                        help='Ref for phylogenetic placement.')    
     # Reference trait table (Madin et al., 2020, Sci. Data)
     parser.add_argument('--ref_trait', metavar='PATH', required=False, default=default.ref_trait,
+                        help='Ref for trait prediction.')
+    # Reference emprical trait distribution along with taxonomy (Madin et al., 2020, Sci. Data)
+    parser.add_argument('--ref_trait_taxonomy', metavar='PATH', required=False, default=default.ref_trait_taxonomy,
                         help='Ref for trait prediction.')
     # Intermediate directory
     parser.add_argument('--intermediate_dir', metavar='PATH', required=False, default=None,
@@ -62,20 +69,23 @@ bac2feature -s rep_seqs.fasta -o predicted_traits.tsv
     input_fasta = args.seq
     out_trait = args.output
     estimation_method = args.method
+    ## Reference for extracting phylogenetic information
+    ref_blastdb = args.ref_blastdb
+    ref_nb_classifier = args.ref_nb_classifier
+    ref_dir_placement = args.ref_dir_placement
+    ## Reference for trait prediction
+    ref_trait = args.ref_trait
+    ref_trait_taxonomy = args.ref_trait_taxonomy
     ## Option
     intermediate_dir = args.intermediate_dir
     threads = args.threads
     check_nsti = args.calculate_NSTI
-    ## Ref
-    ref_trait = args.ref_trait
-    ref_blastdb = args.ref_blastdb
-    ref_dir_placement = args.ref_dir_placement
-
 
     predict_trait_by_three_methods(
         input_fasta=input_fasta, out_trait=out_trait, estimation_method=estimation_method,
         intermediate_dir=intermediate_dir, threads=threads, check_nsti=check_nsti,
-        ref_trait=ref_trait, ref_blastdb=ref_blastdb, ref_dir_placement=ref_dir_placement)
+        ref_trait=ref_trait, ref_trait_taxonomy=ref_trait_taxonomy,
+        ref_blastdb=ref_blastdb, ref_nb_classifier=ref_nb_classifier, ref_dir_placement=ref_dir_placement)
 
     return
 
