@@ -21,22 +21,24 @@ Currently, Bac2Feature predicts 8 continuous and 10 categorical traits listed be
 	- Cell shape
 		- Bacillus, Coccus, Filament, Spiral
 ## Download stand-alone version
-Bac2Feature depends on conda environments, so please install [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) in advance.
+Install dependency:
+- Linux
+- [Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html)
 ```sh
 # Clone github repository
 git clone https://fuyo780/Bac2Feature.git
 cd Bac2Feature/
 
-# Add conda repositories, if necessary
+# Add Conda repositories, if necessary
 conda config --append channels conda-forge
 conda config --append channels bioconda
 
-# Create conda environment
-conda create --name bac2feature --file environment/env_bac2feature.yml
+# Create Conda environment
+conda create --name bac2feature --file environment/env_bac2feature.txt
 conda activate bac2feature
 
-# (Optional) Create conda environment for taxonomy-based prediction
-conda create --name qiime2-2023.5 --file environment/env_qiime2-2023.5-py38-linux-conda.yml
+# (Optional) Create Conda environment for taxonomy-based prediction
+conda create --name qiime2-2023.5 --file environment/env_qiime2-2023.5-py38-linux-conda.txt
 
 # Install Bac2Feature command line
 pip install bac2feature
