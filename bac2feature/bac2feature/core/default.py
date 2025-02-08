@@ -23,7 +23,7 @@ ref_blastdb = path.join(ref_homology, "ref_blastdb")
 
 # Refernce direcotry for taxonomy-based prediction
 ref_dir_taxonomy = path.join(b2f_data_dir, "ref_taxonomy")
-ref_nb_classfier = path.join(ref_dir_taxonomy, "nb_classifier.qza")
+ref_nb_classifier = path.join(ref_dir_taxonomy, "nb_classifier.qza")
 ref_trait_taxonomy = path.join(ref_dir_taxonomy, "empirical_dist.json")
 qiime_env = "qiime2-2023.5"
 
