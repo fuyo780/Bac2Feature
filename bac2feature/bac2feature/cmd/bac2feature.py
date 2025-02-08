@@ -20,14 +20,14 @@ def main():
                     "Three methods are available: homology-based, taxonomy-based, and phylogeny-based prediction.",
         epilog='''
 Usage example:
-bac2feature -s rep_seqs.fasta -o predicted_traits.tsv
+bac2feature -s test_seqs.fasta -o predicted_traits.tsv
 ''',
         formatter_class=argparse.RawDescriptionHelpFormatter
     )
 
     # Input 16S rRNA gene sequences.
     parser.add_argument('-s', '--seq', metavar='FASTA FILE', required=True,
-                        help='Input 16S rRNA sequences in fasta format.')
+            help='Input 16S rRNA sequences in fasta format.')
     # Output predicted trait tables.
     parser.add_argument('-o', '--output', metavar='TSV FILE', required=True,
                         help='Output predicted trait table in tsv format.')
@@ -93,7 +93,7 @@ def predict_trait_by_three_methods(
     input_fasta: str, out_trait: str, estimation_method: str,
     intermediate_dir: Optional[str], threads: int, check_nsti: bool,
     ref_trait=default.ref_trait, ref_blastdb=default.ref_blastdb,
-    ref_nb_classifier=default.ref_nb_classfier, ref_trait_taxonomy=default.ref_trait_taxonomy,
+    ref_nb_classifier=default.ref_nb_classifier, ref_trait_taxonomy=default.ref_trait_taxonomy,
     qiime_env=default.qiime_env, ref_dir_placement=default.ref_dir_phylogeny) -> None:
     """
     Predict prokaryotic traits using three methods.

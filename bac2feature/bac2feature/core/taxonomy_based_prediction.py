@@ -11,7 +11,7 @@ import bac2feature.core.default as default
 ### main func ###
 def predict_by_taxonomy(
     input_fasta:str, out_trait:str, intermediate_dir: str, qiime_env:str,
-    ref_nb_classifier=default.ref_nb_classfier,
+    ref_nb_classifier=default.ref_nb_classifier,
     ref_trait_taxonomy=default.ref_trait_taxonomy, threads=1) -> None:
     """
     Predict microbial traits from fasta file by taxonomic assignment.
