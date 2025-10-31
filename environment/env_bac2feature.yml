@@ -1,4 +1,3 @@
-name: bac2feature
 channels:
   - bioconda
   - conda-forge
