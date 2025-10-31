@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version = '1.0'
+version = '1.1'
 
 setup(
     name='Bac2Feature',
@@ -10,7 +10,7 @@ setup(
     author='Masaki Fujiyoshi',
     author_email='fujiyoshi-masaki353@g.ecc.u-tokyo.ac.jp',
     url='',
-    license='GPL-3.0 licence',
+    license='GPL-3.0',
     packages=find_packages(),
     entry_points={
         'console_scripts': [
