@@ -88,7 +88,7 @@ bac2feature -s rep_seqs.fasta -o predicted_traits.tsv
 
 ```
 ## Citations
-Bac2Feature: an easy-to-use interface to predict prokaryotic traits from 16S rRNA gene sequences 
+Bac2Feature: an easy-to-use interface to predict prokaryotic traits from 16S rRNA gene sequences  
 Masaki Fujiyoshi, Takao K Suzuki, Wataru Iwasaki, Chikara Furuwasa, Motomu Matsui. Bioinform. Adv., 2025.
 ## Contact
 - Masaki Fujiyoshi (The University of Tokyo): fujiyoshi-masaki353@g.ecc.u-tokyo.ac.jp
