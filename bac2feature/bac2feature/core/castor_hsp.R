@@ -1,5 +1,17 @@
 #!/usr/bin/env Rscript
 
+# This file is derived from PICRUSt2 (https://github.com/picrust/picrust2)
+# Original file: picrust2/Rscripts/castor_hsp.R
+#
+# PICRUSt2 is licensed under the GNU General Public License v3.0 (GPL-3.0)
+# Copyright (c) 2016-2023, PICRUSt2 development team
+#
+# Modifications made for Bac2Feature:
+# - Modified to support NSTI (Nearest Sequenced Taxon Index) calculation as optional
+# - Enhanced to handle both numerical and categorical trait predictions
+#
+# This modified version is also distributed under GPL-3.0
+
 suppressWarnings(library(ape, quietly = TRUE))
 suppressWarnings(library(castor, quietly = TRUE))
 
@@ -25,7 +37,7 @@ get_sorted_prob <- function(in_likelihood, study_tips_i, tree_tips) {
 
 }
 
-mp_study_probs <- function(in_trait, in_tree ,unknown_i, check_input) { # カテゴリ型の形質について、MPの隠れ状態を行い、各状態の確率を計算したマトリックスを返す関数
+mp_study_probs <- function(in_trait, in_tree ,unknown_i, check_input) { # Perform MP-based hidden state prediction for categorical traits and return probability matrix
 
   mp_hsp_out <- hsp_max_parsimony(tree = in_tree,
                                   tip_states = in_trait,
