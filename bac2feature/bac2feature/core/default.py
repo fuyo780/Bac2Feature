@@ -14,6 +14,9 @@ b2f_data_dir = path.join(project_dir, "data")
 # Reference trait data
 ref_trait = path.join(b2f_data_dir, "trait_data_madin.tsv")
 
+# NSTI threshold for filtering phylogeny-based predictions
+threshold_phylodistance = path.join(b2f_data_dir, "threshold_phylodistance.tsv")
+
 # Reference 16S rRNA gene sequences
 fasta = path.join(b2f_data_dir, "16S_rRNA_seqs.fasta")
 
