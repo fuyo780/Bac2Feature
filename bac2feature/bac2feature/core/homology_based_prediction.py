@@ -10,7 +10,7 @@ import bac2feature.core.default as default
 def predict_by_homology(
     input_fasta:str, out_trait:str, intermediate_dir:str,
     ref_blastdb=default.ref_blastdb,
-    ref_trait=default.ref_trait, perc_identity=None, threads=1) -> None:
+    ref_trait=default.ref_trait, perc_identity=None, check_nsti=False, threads=1) -> None:
     """Predict microbial traits from fasta file by homology search."""
     blast_result_path = join(intermediate_dir, 'bla_result.outfmt6')
     # Homology search by BLAST
@@ -23,7 +23,8 @@ def predict_by_homology(
     blast_result_to_trait(blast_result_path=blast_result_path,
                           out_trait=out_trait,
                           ref_trait=ref_trait,
-                          perc_identity=perc_identity
+                          perc_identity=perc_identity,
+                          check_nsti=check_nsti
                           )
     return
 
@@ -42,7 +43,7 @@ def call_blast(
     return
 
 def blast_result_to_trait(
-    blast_result_path:str, out_trait:str, ref_trait:str, perc_identity:float) -> None:
+    blast_result_path:str, out_trait:str, ref_trait:str, perc_identity:float, check_nsti:bool) -> None:
     """Predict trait values from best hits of blast results."""
     # Load data
     blast_cols = ['sequence', 'species_tax_id', 'pident', 'length', 'mismatch', 'gapopen', 'bitscore', 'evalue']
@@ -58,6 +59,11 @@ def blast_result_to_trait(
     # Summarize the predicted traits for each sequences
     res_trait.set_index('sequence', drop=False, inplace=True)
     summarized_trait = summarize_traits(res_trait, trait.columns[1:])
+
+    # Remove pident columns if check_nsti=False
+    if not check_nsti:
+        pident_columns = [col for col in summarized_trait.columns if col.endswith('_pident')]
+        summarized_trait = summarized_trait.drop(columns=pident_columns)
 
     # Save
     summarized_trait.to_csv(out_trait, sep="\t", index=False)
