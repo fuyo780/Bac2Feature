@@ -43,7 +43,7 @@ conda create --name bac2feature --file environment/env_bac2feature.txt
 conda activate bac2feature
 
 # (Optional) Create Conda environment for taxonomy-based prediction
-conda create --name qiime2-2023.5 --file environment/env_qiime2-2023.5-py38-linux-conda.txt
+conda create --name qiime2-amplicon-2024.10 --file environment/env_qiime2-amplicon-2024.10.txt
 
 # Install Bac2Feature command line (execute at this directory Bac2Feature)
 cd Bac2Feature/
