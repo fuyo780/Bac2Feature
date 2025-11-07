@@ -33,7 +33,6 @@ Bac2Feature is currently supported on Linux-based operating systems and has been
 ```sh
 # Clone github repository
 git clone https://github.com/fuyo780/Bac2Feature.git
-cd Bac2Feature/
 
 # Add Conda repositories, if necessary
 conda config --append channels conda-forge
@@ -47,6 +46,7 @@ conda activate bac2feature
 conda create --name qiime2-2023.5 --file environment/env_qiime2-2023.5-py38-linux-conda.txt
 
 # Install Bac2Feature command line (execute at this directory Bac2Feature)
+cd Bac2Feature/
 pip install bac2feature
 
 # Print help message
