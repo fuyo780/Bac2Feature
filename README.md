@@ -52,39 +52,8 @@ pip install bac2feature
 # Print help message
 bac2feature -h
 
-usage: bac2feature [-h] -s FASTA FILE -o TSV FILE [-m {homology,taxonomy,phylogeny}] [--check_NSTI] [--without_filter]
-                   [--intermediate_dir PATH] [--threads INT] [--ref_dir_placement PATH] [--ref_blastdb PATH] [--ref_trait PATH]
-
-This script predicts prokaryotic traits from 16S rRNA gene sequences.
-Three methods are available: homology-based, taxonomy-based, and phylogeny-based prediction.
-Citation: Fujiyoshi et al., Bioinform. Adv., 2025. DOI: 10.1093/bioadv/vbad070
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -m {homology,taxonomy,phylogeny}, --method {homology,taxonomy,phylogeny}
-                        Method to predict prokaryotic traits (default: phylogeny).
-                          "homology": predict prokaryotic traits using homology search.
-                          "taxonomy": predict prokaryotic traits using taxonomic classification.
-                          "phylogeny": predict prokaryotic traits using phylogenetic placement.
-  --check_NSTI          Check NSTI values for the phylogeny-based prediction,
-                        or check alignment identity for the homology-based prediction.
-  --without_filter      Disable filtering by NSTI threshold for the phylogeny-based prediction.
-  --intermediate_dir PATH
-                        Store intermediate file in this directory.
-  --threads INT         Specify the number of CPU in parallel (default: 1).
-  --ref_dir_placement PATH
-                        Reference for phylogenetic placement (for developer use).
-  --ref_blastdb PATH    Reference for homology search (for developer use).
-  --ref_trait PATH      Reference for trait prediction (for developer use).
-
-required arguments:
-  -s FASTA FILE, --seq FASTA FILE
-                        Input 16S rRNA sequences in fasta format.
-  -o TSV FILE, --output TSV FILE
-                        Output predicted trait table in tsv format.
-
-Usage example:
-bac2feature -s rep_seqs.fasta -o predicted_traits.tsv
+# Usage example
+bac2feature -s test_seqs.fasta -o predicted_traits.tsv
 
 ```
 ## Citations
