@@ -3,7 +3,7 @@
 ![version](https://img.shields.io/badge/version-1.1-blue)
 
 > [!Note]  
-> Bac2Feature Web Service has been incorporated into GenomeNet Bioinformatics Tools.
+> Bac2Feature Web Service has been incorporated into GenomeNet Bioinformatics Tools.  
 > We appreciate your patience during the server migration.
 
 Bac2Feature is an easy-to-use interface to predict bacterial and archaeal traits from 16S rRNA gene sequences.
